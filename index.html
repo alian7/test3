@@ -7,7 +7,7 @@
   </head>
   <body>
     <!-- Contact Form - sent to a Google Sheet -->
-    <form name="submit-to-google-sheet">
+    <form name="submit-to-google-sheet" id="newForm">
       <p>
         <label>Name</label>
         <input id='FirstName' name='FirstName' type='text'>
@@ -30,6 +30,7 @@
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+    document.getElementById("newForm").reset();
       .catch(error => console.error('Error!', error.message))
   })
 </script>
